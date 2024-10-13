@@ -1,0 +1,11 @@
+Flask==2.3.2
+transformers==4.33.0
+torch==2.0.1
+beautifulsoup4==4.12.2
+requests==2.31.0
+newspaper3k==0.2.8 
+APScheduler==3.10.1
+sentencepiece==0.1.99 
+pandas==2.1.1
+gradio==3.36.1
+gunicorn==21.2.0
