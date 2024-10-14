@@ -2,8 +2,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from app.scraper import scrape_latest_news
 
-# Load the GPT-2 model and tokenizer from Hugging Face
-model_name = "gpt2"  # Using GPT-2 model
+# Load the GPT-J model and tokenizer from Hugging Face
+model_name = "EleutherAI/gpt-j-6B"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
@@ -11,7 +11,7 @@ model = AutoModelForCausalLM.from_pretrained(model_name)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
-# Function to generate a chatbot response using the GPT-2 model with news context
+# Function to generate a chatbot response using the GPT-J model with news context
 def generate_response(input_text):
     try:
         # Get the latest news articles
@@ -26,14 +26,16 @@ def generate_response(input_text):
         # Combine the user's input with the news context
         combined_input = f"User: {input_text}\n\nLatest News:\n{news_context}\n\nChatbot:"
 
-        # Encode input text
-        inputs = tokenizer(combined_input, return_tensors="pt").to(device)
+        # Encode input text with attention mask
+        inputs = tokenizer(combined_input, return_tensors="pt", padding=True).to(device)
 
-        # Generate response with GPT-2
+        # Generate response
         outputs = model.generate(
-            inputs.input_ids,
+            input_ids=inputs.input_ids,
+            attention_mask=inputs.attention_mask,  # Ensure attention mask is set
+            max_new_tokens=50,  # Adjust this value for response length
             num_return_sequences=1,
-            max_new_tokens=100,
+            pad_token=tokenizer.eos_token,  # Set pad_token to eos_token
             pad_token_id=tokenizer.eos_token_id,  # Set pad_token_id to eos_token_id
         )
 
