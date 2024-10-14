@@ -2,9 +2,9 @@ from flask import Flask, jsonify, request
 from app.chatbot import generate_response
 from app.scraper import scrape_latest_news
 
-
 app = Flask(__name__)
 
+# Flask route for index
 @app.route('/', methods=['GET'])
 def index():
     return jsonify({"status": "OK"}), 200

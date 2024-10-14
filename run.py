@@ -19,14 +19,13 @@ gradio_interface = gr.Interface(
 def run_flask():
     app.run(port=5000)
 
-# Function to run Gradio interface
 def run_gradio():
-    gradio_interface.launch(share=True)  # Set share=True if you want public access
+    # Set share=True for public access
+    gradio_interface.launch(share=False)
 
 if __name__ == "__main__":
     # Start Flask and Gradio in separate threads
     flask_thread = Thread(target=run_flask)
     flask_thread.start()
-    
-    run_gradio()  # This will block the main thread
+    run_gradio()
 
