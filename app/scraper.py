@@ -1,50 +1,27 @@
-# scraper.py
-
 def scrape_latest_news():
-    """
-    Scrapes the latest news articles.
-    
-    This is a placeholder function that currently returns dummy news articles.
-    """
-    print("Scraping news... (placeholder)")
-
-    # Return some dummy articles for now
+    # This function is a placeholder for web scraping news articles
     articles = [
         {
-            "title": "Sample News Article 1",
-            "description": "This is a description of sample news article 1. It covers the latest developments in technology.",
-            "url": "https://example.com/article1",
-            "source": "Example News",
-            "published_at": "2024-10-01T12:00:00Z"
+            "title": "Nepal Celebrates Vijaya Dashami Amidst Challenges",
+            "description": "Prime Minister K P Sharma Oli and President Ram Chandra Paudel extend greetings to citizens during Vijaya Dashami, urging support for those impacted by recent floods and landslides.",
+            "url": "https://www.devdiscourse.com/article/entertainment/2634630-celebrating-amidst-challenges-nepals-vijaya-dashami-festival",
+            "source": "Devdiscourse",
+            "published_at": "2024-10-12T15:56:00Z"
         },
         {
-            "title": "Sample News Article 2",
-            "description": "This is a description of sample news article 2. It discusses recent events in global politics.",
-            "url": "https://example.com/article2",
-            "source": "Example News",
-            "published_at": "2024-10-02T12:00:00Z"
+            "title": "Floods and Landslides Devastate Nepal",
+            "description": "Recent natural disasters in Nepal have caused 240 fatalities and displaced thousands, impacting travel during the Dashain festival.",
+            "url": "https://www.devdiscourse.com/article/environment/2634632-devastating-floods-and-landslides-wreak-havoc-across-nepal",
+            "source": "Devdiscourse",
+            "published_at": "2024-10-12T14:30:00Z"
         },
         {
-            "title": "Sample News Article 3",
-            "description": "This is a description of sample news article 3. It analyzes the current economic trends.",
-            "url": "https://example.com/article3",
-            "source": "Example News",
-            "published_at": "2024-10-03T12:00:00Z"
-        },
-        {
-            "title": "Sample News Article 4",
-            "description": "This is a description of sample news article 4. It provides insights into the latest scientific discoveries.",
-            "url": "https://example.com/article4",
-            "source": "Example News",
-            "published_at": "2024-10-04T12:00:00Z"
-        },
-        {
-            "title": "Sample News Article 5",
-            "description": "This is a description of sample news article 5. It features the latest trends in entertainment.",
-            "url": "https://example.com/article5",
-            "source": "Example News",
-            "published_at": "2024-10-05T12:00:00Z"
-        },
+            "title": "Nepal's Dashain Celebrations Amidst Natural Disasters",
+            "description": "Despite travel challenges, 1.3 million people traveled home for Dashain, emphasizing the spirit of resilience.",
+            "url": "https://www.devdiscourse.com/article/culture/2634633-nepals-dashain-celebrations-amidst-natural-disasters",
+            "source": "Devdiscourse",
+            "published_at": "2024-10-12T13:45:00Z"
+        }
     ]
     return articles
 
