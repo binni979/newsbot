@@ -17,7 +17,7 @@ gradio_interface = gr.Interface(
 
 # Function to run Flask app
 def run_flask():
-    app.run(port=5000, debug=True)
+    app.run(port=5000, debug=True, threaded=False)
 
 def run_gradio():
     # Set share=True for public access

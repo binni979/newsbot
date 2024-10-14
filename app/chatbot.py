@@ -7,6 +7,13 @@ model_name = "EleutherAI/gpt-j-6B"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
+# Set a pad token as EOS token
+tokenizer.pad_token = tokenizer.eos_token
+
+# If you want to add a custom padding token:
+# tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+# model.resize_token_embeddings(len(tokenizer))  # This is necessary if you add new tokens
+
 # Set device to GPU if available, else use CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
@@ -28,14 +35,13 @@ def generate_response(input_text):
 
         # Encode input text with attention mask
         inputs = tokenizer(combined_input, return_tensors="pt", padding=True).to(device)
-
+        print ('yo')
         # Generate response
         outputs = model.generate(
             input_ids=inputs.input_ids,
             attention_mask=inputs.attention_mask,  # Ensure attention mask is set
             max_new_tokens=50,  # Adjust this value for response length
             num_return_sequences=1,
-            pad_token=tokenizer.eos_token,  # Set pad_token to eos_token
             pad_token_id=tokenizer.eos_token_id,  # Set pad_token_id to eos_token_id
         )
 
