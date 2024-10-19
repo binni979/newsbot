@@ -135,3 +135,6 @@ dmypy.json
 
 # Ignore large model files
 data/models/
+
+# Gradio
+.gradio
