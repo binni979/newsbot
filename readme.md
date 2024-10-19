@@ -1,11 +1,10 @@
-# News Chatbot with GPT-J and Flask
+# Newsbot (WIP)
 
-This project integrates a chatbot powered by the GPT-J-6B language model with a Flask API. The chatbot provides responses using both user inputs and the latest news context from web scraping. Gradio is used for the user interface, and the project includes a simple news scraper for retrieving dummy news data.
+This project integrates a chatbot powered by the GPT-J-6B language model (being experimented) with a Flask API. The chatbot provides responses using both user inputs and the latest news context from web scraping. Gradio is used for the user interface, and the project includes a simple news scraper for retrieving dummy news data.
 
 ## Features
 
 - **News Scraping**: Scrapes the latest news articles (currently uses static dummy data).
-- **GPT-J-6B Model**: Utilizes the GPT-J-6B model for chatbot responses with news context.
 - **Flask API**: Provides REST API endpoints for chatbot responses and scraping.
 - **Gradio Interface**: Interactive interface for chatting with the bot.
 
