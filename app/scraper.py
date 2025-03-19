@@ -8,7 +8,7 @@ def scrape_latest_news(query="news"):
     to_date = today.strftime('%Y-%m-%d')
 
     # API Key from NewsAPI
-    api_key = api_key
+    api_key = 'api_key'
     url = "https://newsapi.org/v2/everything"
 
     # Define parameters for API request
